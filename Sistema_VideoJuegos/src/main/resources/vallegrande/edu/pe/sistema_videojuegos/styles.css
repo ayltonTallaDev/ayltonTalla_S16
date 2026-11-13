@@ -1,0 +1,146 @@
+
+.root {
+    -fx-font-family: "Segoe UI", Arial;
+    -fx-background-color: #f3f6fb;
+    -fx-font-size: 13px;
+}
+
+.sidebar {
+    -fx-background-color: #111c35;
+    -fx-padding: 28px 20px;
+    -fx-spacing: 18px;
+}
+
+.brand {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.sidebar-subtitle {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+}
+
+.sidebar-item {
+    -fx-background-color: #24395f;
+    -fx-text-fill: white;
+    -fx-padding: 13px 16px;
+    -fx-background-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.content {
+    -fx-padding: 28px;
+    -fx-spacing: 20px;
+}
+
+.page-title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #172554;
+}
+
+.page-subtitle {
+    -fx-text-fill: #64748b;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 14px;
+    -fx-padding: 22px;
+    -fx-effect: dropshadow(gaussian, #dbe3ef, 12, 0.2, 0, 3);
+}
+
+.card-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.field-label {
+    -fx-text-fill: #475569;
+    -fx-font-weight: bold;
+}
+
+.text-field,
+.date-picker {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #dbe3ed;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-pref-height: 38px;
+}
+
+.text-field:focused {
+    -fx-border-color: #6366f1;
+}
+
+.action-button {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 11px 18px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.action-button:hover {
+    -fx-opacity: 0.85;
+}
+
+.btn-primary {
+    -fx-background-color: #4f46e5;
+}
+
+.btn-info {
+    -fx-background-color: #0284c7;
+}
+
+.btn-warning {
+    -fx-background-color: #d97706;
+}
+
+.btn-danger {
+    -fx-background-color: #dc2626;
+}
+
+.btn-secondary {
+    -fx-background-color: #64748b;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #eef2ff;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-padding: 12px 6px;
+}
+
+.table-row-cell {
+    -fx-cell-size: 42px;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.table-row-cell:filled:selected .text {
+    -fx-fill: #1e3a8a;
+}
+
+.table-cell {
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 10px;
+}
+
+.footer-text {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+}

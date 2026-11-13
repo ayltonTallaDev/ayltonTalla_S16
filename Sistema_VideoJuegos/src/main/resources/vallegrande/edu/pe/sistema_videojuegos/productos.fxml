@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="vallegrande.edu.pe.sistema_videojuegos.controller.ProductoController"
+            prefWidth="1250"
+            prefHeight="800"
+            stylesheets="@styles.css">
+
+    <left>
+        <VBox prefWidth="235" styleClass="sidebar">
+
+            <Label text="GAMESTORE"
+                   styleClass="brand"/>
+
+            <Label text="Sistema de gestión"
+                   styleClass="sidebar-subtitle"/>
+
+            <Separator/>
+
+            <Label text="PANEL PRINCIPAL"
+                   styleClass="sidebar-subtitle"/>
+
+            <Label text="Inventario de videojuegos"
+                   styleClass="sidebar-item"
+                   maxWidth="Infinity"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Separator/>
+
+            <Label text="JavaFX + MySQL"
+                   styleClass="sidebar-subtitle"/>
+
+            <Label text="Sistema de Videojuegos v1.0"
+                   styleClass="sidebar-subtitle"/>
+
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER">
+            <content>
+                <VBox styleClass="content">
+
+                    <VBox spacing="5">
+                        <Label text="Gestión de videojuegos"
+                               styleClass="page-title"/>
+
+                        <Label text="Administra los productos de tu tienda desde un solo lugar."
+                               styleClass="page-subtitle"/>
+                    </VBox>
+
+                    <VBox spacing="18"
+                          styleClass="card">
+
+                        <Label text="Información del videojuego"
+                               styleClass="card-title"/>
+
+                        <GridPane hgap="18" vgap="10">
+
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50"/>
+                                <ColumnConstraints percentWidth="50"/>
+                            </columnConstraints>
+
+                            <Label text="Título"
+                                   styleClass="field-label"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="0"/>
+
+                            <Label text="Plataforma"
+                                   styleClass="field-label"
+                                   GridPane.rowIndex="0"
+                                   GridPane.columnIndex="1"/>
+
+                            <TextField fx:id="txtTitulo"
+                                       promptText="Ej. Minecraft"
+                                       maxWidth="Infinity"
+                                       GridPane.rowIndex="1"
+                                       GridPane.columnIndex="0"/>
+
+                            <TextField fx:id="txtPlataforma"
+                                       promptText="Ej. PC, PS5"
+                                       maxWidth="Infinity"
+                                       GridPane.rowIndex="1"
+                                       GridPane.columnIndex="1"/>
+
+                            <Label text="Género"
+                                   styleClass="field-label"
+                                   GridPane.rowIndex="2"
+                                   GridPane.columnIndex="0"/>
+
+                            <Label text="Clasificación"
+                                   styleClass="field-label"
+                                   GridPane.rowIndex="2"
+                                   GridPane.columnIndex="1"/>
+
+                            <TextField fx:id="txtGenero"
+                                       promptText="Ej. Acción"
+                                       maxWidth="Infinity"
+                                       GridPane.rowIndex="3"
+                                       GridPane.columnIndex="0"/>
+
+                            <TextField fx:id="txtClasificacion"
+                                       promptText="Ej. E10+"
+                                       maxWidth="Infinity"
+                                       GridPane.rowIndex="3"
+                                       GridPane.columnIndex="1"/>
+
+                            <Label text="Precio (S/)"
+                                   styleClass="field-label"
+                                   GridPane.rowIndex="4"
+                                   GridPane.columnIndex="0"/>
+
+                            <Label text="Stock"
+                                   styleClass="field-label"
+                                   GridPane.rowIndex="4"
+                                   GridPane.columnIndex="1"/>
+
+                            <TextField fx:id="txtPrecio"
+                                       promptText="0.00"
+                                       maxWidth="Infinity"
+                                       GridPane.rowIndex="5"
+                                       GridPane.columnIndex="0"/>
+
+                            <TextField fx:id="txtStock"
+                                       promptText="Cantidad disponible"
+                                       maxWidth="Infinity"
+                                       GridPane.rowIndex="5"
+                                       GridPane.columnIndex="1"/>
+
+                            <Label text="Fecha de lanzamiento"
+                                   styleClass="field-label"
+                                   GridPane.rowIndex="6"
+                                   GridPane.columnIndex="0"/>
+
+                            <DatePicker fx:id="dpFechaLanzamiento"
+                                        maxWidth="Infinity"
+                                        GridPane.rowIndex="7"
+                                        GridPane.columnIndex="0"/>
+
+                        </GridPane>
+
+                        <Separator/>
+
+                        <HBox spacing="10">
+                            <Button text="Registrar"
+                                    onAction="#registrar"
+                                    styleClass="action-button btn-primary"/>
+
+                            <Button text="Consultar"
+                                    onAction="#listar"
+                                    styleClass="action-button btn-info"/>
+
+                            <Button text="Actualizar"
+                                    onAction="#actualizar"
+                                    styleClass="action-button btn-warning"/>
+
+                            <Button text="Eliminar"
+                                    onAction="#eliminar"
+                                    styleClass="action-button btn-danger"/>
+
+                            <Button text="Limpiar"
+                                    onAction="#limpiar"
+                                    styleClass="action-button btn-secondary"/>
+                        </HBox>
+
+                    </VBox>
+
+                    <VBox spacing="15"
+                          styleClass="card"
+                          VBox.vgrow="ALWAYS">
+
+                        <Label text="Inventario de videojuegos"
+                               styleClass="card-title"/>
+
+                        <Label text="Selecciona un videojuego para editarlo o eliminarlo."
+                               styleClass="page-subtitle"/>
+
+                        <TableView fx:id="tablaProductos"
+                                   prefHeight="320"
+                                   VBox.vgrow="ALWAYS">
+
+                            <columns>
+                                <TableColumn fx:id="colId"
+                                             text="ID"
+                                             prefWidth="50"/>
+
+                                <TableColumn fx:id="colTitulo"
+                                             text="Título"
+                                             prefWidth="170"/>
+
+                                <TableColumn fx:id="colPlataforma"
+                                             text="Plataforma"
+                                             prefWidth="110"/>
+
+                                <TableColumn fx:id="colGenero"
+                                             text="Género"
+                                             prefWidth="110"/>
+
+                                <TableColumn fx:id="colClasificacion"
+                                             text="Clasificación"
+                                             prefWidth="105"/>
+
+                                <TableColumn fx:id="colPrecio"
+                                             text="Precio"
+                                             prefWidth="85"/>
+
+                                <TableColumn fx:id="colStock"
+                                             text="Stock"
+                                             prefWidth="65"/>
+
+                                <TableColumn fx:id="colFecha"
+                                             text="Lanzamiento"
+                                             prefWidth="115"/>
+                            </columns>
+
+                        </TableView>
+
+                    </VBox>
+
+                    <Label text="GAMESTORE | Sistema de inventario desarrollado con JavaFX y MySQL"
+                           styleClass="footer-text"/>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
+
